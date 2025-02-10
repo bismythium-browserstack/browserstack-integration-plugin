@@ -68,8 +68,7 @@ public class QualityDashboardInit {
     }
 
     private static void checkQDIntegrationAndDumpMetaData(BrowserStackCredentials browserStackCredentials) throws JsonProcessingException {
-        // if(initialQDSetupRequired(browserStackCredentials)) {
-        if(true) {
+        if(initialQDSetupRequired(browserStackCredentials)) {
             List<String> allPipelines = getAllPipelines(browserStackCredentials);
             if(!allPipelines.isEmpty()){
                 boolean projectsSavedSuccessfully = sendPipelinesPaginated(browserStackCredentials, allPipelines);
